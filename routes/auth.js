@@ -51,7 +51,7 @@ router.post('/createuser', [
           try {
                let user = await User.findOne({ email: req.body.email });
                if (user) {
-                    return res.status(400).json({success, error:[ {msg:"Sorry a user with this email already exists"}]})
+                    return res.status(400).json({success, error:[ {msg:"Sorry a user with this email already exists. If that's you login instead of signing up!"}]})
                }
 
           //User doesnot exist so create user and hash password 
